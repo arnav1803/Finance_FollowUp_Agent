@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ subject }}</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        .email-header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: #ffffff;
+            padding: 24px 32px;
+        }
+        .email-header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .email-header .company {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+        .email-body {
+            padding: 32px;
+            color: #333333;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+        .email-body p {
+            margin: 0 0 16px 0;
+        }
+        .payment-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #1565c0, #1976d2);
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 16px 0;
+        }
+        .email-footer {
+            background-color: #f8f9fa;
+            padding: 20px 32px;
+            font-size: 12px;
+            color: #888888;
+            border-top: 1px solid #e8e8e8;
+        }
+        .email-footer a {
+            color: #1565c0;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h1>{{ subject }}</h1>
+            <div class="company">Accounts Receivable · Finance Department</div>
+        </div>
+        <div class="email-body">
+            {{ body | replace('\n', '<br>') | safe }}
+        </div>
+        <div class="email-footer">
+            <p>This is an automated communication from the Accounts Receivable team.<br>
+            If you have already made this payment, please disregard this notice.</p>
+            <p>&copy; 2026 Finance Department. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
